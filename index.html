@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Girl, Cee 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+    :root {
+      --bg-color: #fff0f5;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --primary: #ff1493;
+      --primary-gradient: linear-gradient(135deg, #ff69b4 0%, #ff1493 50%, #db7093 100%);
+      --accent: #e6a8d7;
+      --text: #4a2e35;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 50%, #ffe6f2 0%, #f3e6ff 50%, #ffd1dc 100%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Floating background sparkles & hearts */
+    .heart-bg {
+      position: fixed;
+      top: -10%;
+      font-size: 24px;
+      opacity: 0.7;
+      animation: floatSparkle 8s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+      filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.6));
+    }
+
+    @keyframes floatSparkle {
+      0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(110vh) rotate(360deg) scale(1.2); opacity: 0; }
+    }
+
+    /* Main Container with Dazzling Border Glow */
+    .container {
+      background: var(--card-bg);
+      padding: 40px 28px;
+      border-radius: 32px;
+      box-shadow: 0 15px 45px rgba(255, 20, 147, 0.25),
+                  0 0 25px rgba(255, 182, 193, 0.5),
+                  inset 0 0 15px rgba(255, 255, 255, 0.9);
+      border: 3px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+      text-align: center;
+      max-width: 450px;
+      width: 100%;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      animation: containerGlow 4s ease-in-out infinite alternate;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -3px; bottom: -3px;
+      left: -3px; right: -3px;
+      background: linear-gradient(45deg, #ffb6c1, #ff1493, #dda0dd, #ff69b4);
+      border-radius: 34px;
+      z-index: -1;
+      animation: borderShift 6s linear infinite;
+    }
+
+    @keyframes borderShift {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    @keyframes containerGlow {
+      0% { box-shadow: 0 15px 45px rgba(255, 20, 147, 0.25), 0 0 20px rgba(255, 182, 193, 0.4); }
+      100% { box-shadow: 0 18px 55px rgba(255, 20, 147, 0.4), 0 0 35px rgba(255, 105, 180, 0.7); }
+    }
+
+    .bow-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+      display: inline-block;
+      animation: floatBow 2.5s ease-in-out infinite;
+      filter: drop-shadow(0 4px 10px rgba(255, 105, 180, 0.4));
+    }
+
+    @keyframes floatBow {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-6px) scale(1.08); }
+    }
+
+    h1 {
+      color: var(--text);
+      font-size: 1.85rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      background: linear-gradient(45deg, #4a2e35, #ff1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Love Letter Box Styling */
+    .letter-box {
+      background: rgba(255, 253, 254, 0.95);
+      border: 2px dashed #ffb6c1;
+      border-radius: 22px;
+      padding: 22px;
+      margin-bottom: 25px;
+      text-align: left;
+      box-shadow: inset 0 0 15px rgba(255, 192, 203, 0.2), 0 4px 15px rgba(255, 182, 193, 0.15);
+      position: relative;
+    }
+
+    .letter-box::after {
+      content: '🎀';
+      position: absolute;
+      top: -12px;
+      right: 15px;
+      font-size: 20px;
+    }
+
+    .letter-text {
+      color: #5c3a44;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .letter-added-romantic {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: var(--primary);
+      margin-top: 15px;
+      line-height: 1.4;
+      display: block;
+      font-weight: 700;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+      position: relative;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 90%;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-yes {
+      background: var(--primary-gradient);
+      color: white;
+      box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4), 0 0 12px rgba(255, 105, 180, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-yes::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255,255,255,0.4), transparent);
+      transform: rotate(30deg);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
+    }
+
+    .btn-yes:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(255, 20, 147, 0.6);
+    }
+
+    .btn-maybe {
+      background-color: #fff0f5;
+      color: #9370db;
+      border: 2px solid #dda0dd;
+    }
+
+    .btn-maybe:hover {
+      background-color: #f3e6ff;
+    }
+
+    .btn-no {
+      background-color: #f8f8f8;
+      color: #aaa;
+      border: 2px solid #eee;
+      position: relative;
+    }
+
+    .step-2, .success-message {
+      display: none;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+    }
+
+    input[type="datetime-local"], input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #ffb6c1;
+      border-radius: 16px;
+      outline: none;
+      font-size: 1rem;
+      color: var(--text);
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+    }
+
+    /* Vibe / Spot tags selection */
+    .vibe-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .tag-btn {
+      background: #fff0f5;
+      border: 2px solid #ffb6c1;
+      border-radius: 25px;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #7a5260;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .tag-btn.active, .tag-btn:hover {
+      background: var(--primary-gradient);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .success-message h2 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.8rem;
+    }
+
+    .success-message p {
+      color: #7a5260;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating background decorations -->
+  <div id="hearts-container"></div>
+
+  <div class="container">
+    <!-- Step 1: Love Letter & Official Girlfriend Proposal -->
+    <div id="step1">
+      <div class="bow-icon">🎀✨</div>
+      <h1>To My Dearest Cee 💕</h1>
+      
+      <div class="letter-box">
+        <p class="letter-text">
+From the very first day you asked if we could be friends... I was so confused because I was scared, and I didn't even know why. 
+
+I never knew that the beautiful friendship we created could lead to something so deeply special. Now you are my girlfriend, and you mean the absolute whole world to me. I feel genuinely happy every single time I see you, and I'm at total peace knowing that you are mine. I promise to keep you, hold you, and cherish you forever ♾️.
+
+<span class="letter-added-romantic">Thank you for being my safe haven, my favorite smile, and my best decision. You make my world infinitely softer and brighter just by being in it. I love you endlessly, my prettiest girl. 💖</span>
+        </p>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-yes" onclick="nextStep()">Yes! Be My Girlfriend Officially! 💖</button>
+        <button class="btn btn-maybe" onclick="handleNotSure()">Not sure... 🌸</button>
+        <button class="btn btn-no" id="noBtn" onmouseover="moveButton()">No 🥺</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Date, Calendar & Restaurant Picker -->
+    <div id="step2" class="step-2">
+      <div class="bow-icon">🥐🍗✨</div>
+      <h1>Planning Our November Date 💕</h1>
+      <p style="color: #7a5260; margin-bottom: 22px;">Pick our November date time & favorite food spots, Cee!</p>
+
+      <form id="dateForm" onsubmit="submitForm(event)">
+        <!-- Calendar / Date & Time Selector (Defaulted to November 2026) -->
+        <div class="form-group">
+          <label for="dateSelect">Select Date & Time in November 📅✨</label>
+          <input type="datetime-local" id="dateSelect" value="2026-11-14T15:00" min="2026-11-01T00:00" max="2026-11-30T23:59" required />
+        </div>
+
+        <!-- Food Spot Selection -->
+        <div class="form-group">
+          <label>Where Are We Eating? 😋</label>
+          <div class="vibe-tags">
+            <button type="button" class="tag-btn active" onclick="selectSpot(this, 'Hives Pastries & Chicken Inn 🥐🍗')">Hives Pastries & Chicken Inn 🥐🍗</button>
+            <button type="button" class="tag-btn" onclick="selectSpot(this, 'Hives Pastries 🥐')">Hives Pastries 🥐</button>
+            <button type="button" class="tag-btn" onclick="selectSpot(this, 'Chicken Inn 🍗')">Chicken Inn 🍗</button>
+          </div>
+          <input type="hidden" id="restaurant" value="Hives Pastries & Chicken Inn 🥐🍗" />
+        </div>
+
+        <!-- Custom Request -->
+        <div class="form-group">
+          <label for="customNote">Any Special Treats to Add? 🧁</label>
+          <input type="text" id="customNote" placeholder="Extra pastries, specific ice cream..." />
+        </div>
+
+        <button type="submit" class="btn btn-yes" style="margin-top: 10px;">Lock In Our Date 💕</button>
+      </form>
+    </div>
+
+    <!-- Step 3: Success Confirmation -->
+    <div id="step3" class="success-message">
+      <div class="bow-icon">🎀👑✨</div>
+      <h2>Forever & Always 💖</h2>
+      <p id="confirmationText">Get ready for Hives Pastries & Chicken Inn in November! I can't wait for our date and every single memory we're going to build together, Cee. You're my favorite person! 💖</p>
+    </div>
+  </div>
+
+  <script>
+    // Create soft floating dazzling icons
+    const heartsContainer = document.getElementById('hearts-container');
+    const heartSymbols = ['💖', '🌸', '✨', '🎀', '💕', '🌷', '⭐', '💎'];
+    
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-bg');
+      heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heartsContainer.appendChild(heart);
+    }
+
+    // Playful runaway No button
+    function moveButton() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.random() * 140 - 70;
+      const y = Math.random() * 100 - 50;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    // Handle "Not sure..." click
+    function handleNotSure() {
+      alert("Take your time, my love... but you know we belong together! 🥺💖");
+      nextStep();
+    }
+
+    // Move to step 2
+    function nextStep() {
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+    }
+
+    // Select food spot
+    function selectSpot(button, value) {
+      document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      document.getElementById('restaurant').value = value;
+    }
+
+    // Submit date details
+    function submitForm(event) {
+      event.preventDefault();
+      const spot = document.getElementById('restaurant').value;
+      const dateVal = new Date(document.getElementById('dateSelect').value);
+      
+      const formattedDate = dateVal.toLocaleDateString('en-US', { 
+        month: 'long', 
+        day: 'numeric', 
+        year: 'numeric' 
+      });
+
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step3').style.display = 'block';
+
+      if (spot) {
+        document.getElementById('confirmationText').innerText = 
+          `Get ready for ${spot} on ${formattedDate}! I can't wait for our date and every single memory we're going to build together, Cee. You're my favorite person! 💖`;
+      }
+    }
+  </script>
+</body>
+</html>
+  
